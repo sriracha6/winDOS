@@ -26,12 +26,20 @@
         </ul>
     </div>
     <div id="body">
-        <div id="leftpane">
-            p
+        <div id="leftpane" style="padding-top:25px">
+            <button class="vmitem" id="win93">Windows 93 VM</button>
+            <button class="vmitem" id="win96">Windows 96 VM</button>
+            <button class="vmitem" id="windos">winDOS VM</button>
         </div>
 
         <div id="rightpane">
-            a
+            <iframe id="VM"></iframe>
         </div>
     </div>
+
+    <script>
+        win93.onclick = function(){ VM.src = "https://www.windows93.net" }
+        win96.onclick = function(){ VM.src = "https://www.windows96.net" }
+        windos.onclick = function(){ VM.innerHTML = document.location }
+    </script>
 </body>

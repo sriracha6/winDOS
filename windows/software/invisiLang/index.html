@@ -21,7 +21,7 @@
             Invisilang has 6 instructions (like <a href="http://www.jsfuck.com/">jsfuck</a>) except you can't see them!
             <br><br>
             If you've been on technology for a long time like me, you probably know where this is going - unicode.
-            This is a <i>very</i> lazy language. It is just JSFuck but with unicode that's replaced and interpreted.
+            This is a <i>very</i> lazy language. It is just JSFuck but with unicode that's replaceAlld and interpreted.
             <br><br>
             <div style="float:left">
             ZWJ: !<br>
@@ -38,11 +38,8 @@
     <textarea id="text" oninput="s()" style="height:250px"></textarea>
     <p id="size">Size:</p>
     <button style="float:left;width:50%" onclick="f(document.getElementById(`text`).value)">Execute!</button> 
-    <button style="float:left;width:50%" onclick="e(document.getElementById(`text`).value)">(dunno if this works) Convert JSFuck to InvisiLang&trade;</button>
+    <button style="float:left;width:50%" onclick="e(document.getElementById(`text`).value)">Convert JSFuck to InvisiLang&trade;</button>
     <br>
-    Load Program:<select>
-        <option>Hello, World!</option>
-    </select>
     </div>
     <script>
         // ZWJ : !
@@ -54,7 +51,7 @@
         function r(){document.querySelector("#text").value=""; document.querySelector("#size").innerHTML="Done!";}
         function c(s){return s.includes("[") /* jsfuck needs this so ez check ;)*/}
         function s(){document.getElementById("size").innerHTML = `Size: ${new TextEncoder().encode(document.getElementById("text").value).length} bytes`}
-        function f(s){if(!c(s))alert("syntax err");eval(s.replace("𝅳","(").replace("\uFEFF",")").replace("\u2060","]").replace("\u200B","[").replace("\u200c","+").replace("\u200D","!"))}
-        function e(s){r();document.querySelector("#text").value=s.replace("(","𝅳").replace(")","\uFEFF").replace("]","\u2060").replace("[","\u200B").replace("+","\u200c").replace("!","\u200D")}
+        function f(s){eval(s.replaceAll("𝅳","(").replaceAll("\uFEFF",")").replaceAll("\u2060","]").replaceAll("\u200B","[").replaceAll("\u200c","+").replaceAll("\u200D","!"))}
+        function e(s){r();document.querySelector("#text").value=s.replaceAll("(","𝅳").replaceAll(")","\uFEFF").replaceAll("]","\u2060").replaceAll("[","\u200B").replaceAll("+","\u200c").replaceAll("!","\u200D")}
     </script>
 </body>

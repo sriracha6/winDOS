@@ -1,8 +1,8 @@
-window.onload = function()
+/*window.onload = function()
 {
     var c = new Window("AAAA",100,55,
     `./windows/software/TESTicles.html`,null,null, false);
-}
+}*/
 
 $(document).ready(function(){
 	$(document).bind('contextmenu', function(event){
