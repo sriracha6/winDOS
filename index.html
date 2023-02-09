@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <title>WinDos</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="./src/jquery-3.6.0.js"></script>
+    <script src="./src/jquery-ui.js"></script>
+
+</head>
+<body>
+    <div id="body">
+        <div id="maincontent">
+            <div id="desktop">
+            <!--<img src="" width="100%" height="100%"></img>-->
+                <iframe id="wallpaper" src="./animwallpaper/gay.html">
+
+                </iframe>
+                <table id="desktopiconlayout">
+                    <tr>
+                        <td><div class="desktopIcon" onclick="new Window('VMCare - VMz',100,55,'./windows/software/vmcare/vmcare.html',null,null, false);">
+                            <img src="./img/software/VM-Care.png"></img>
+                            VM-Care
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="desktopIcon" onclick="new Window('SimpleGUI',100,55,'./windows/software/SimpleGUI/simplegui.html',null,null, false);">
+                            <img src="./img/software/SimpleGUI.png"></img>
+                            Simple GUI
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="desktopIcon">
+                            <img src="./img/software/VM-Care.png"></img>
+                            VM-Care
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="desktopIcon">
+                            <img src="./img/software/VM-Care.png"></img>
+                            VM-Care
+                        </div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="taskbar">
+            <button id="startButton" class="taskbarBtn">
+                <table><tr>
+                    <td>
+                        <img src="./img/start.png" style="width:32px;height:32px;"></img>
+                    </td>
+                    <td>START</td>
+                </tr></table>
+            </button>
+            <div id="everythingElseTaskbar">
+            
+            </div>
+        </div>
+    </div>
+
+    <div id="contextmenu">
+        <table>
+            <tr>
+                <td><button>Do</button></td>
+            </tr>
+            <tr>
+                <td><button>Ddo</button></td>
+            </tr>
+            <hr>
+            <tr>
+                <td><button>Dddo</button></td>
+            </tr>
+        </table>
+    </div>
+    <script src="classes.js"></script>
+    <script src="main.js"></script>
+</body>

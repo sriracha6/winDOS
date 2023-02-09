@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <title>InvisiLang</title>
+    <style>
+        #r{float:right;width:50%}
+        #r *{width:100%}
+        #l{float:left;width:50%}
+        p{text-indent:10px}
+        @keyframes rain{0%{color:red;} 50%{color:blue;} 100%{color:red;}}
+        .r{animation:rain 5s infinite;}
+    </style>
+</head>
+<body>
+    <div id="l">
+        <h1>Welcome to the best of programming - InvisiLang!</h1>
+        <p>You thought you had seen it all with whitespace - the programming language where you can only use tabs, space, newline, etc. for coding. But now, we have evolved.</p>
+        <p>You thought that javascript was stupid because you could run any program in it with 6 characters, <pre>[], (), +, !</pre>. But now, I present to you, ladies and gentlemen...</p>
+        <p><b class="r">InvisiLang</b> - Execute javascript with nothing there!</p>
+        <hr>
+        <p>
+            Invisilang has 6 instructions (like <a href="http://www.jsfuck.com/">jsfuck</a>) except you can't see them!
+            <br><br>
+            If you've been on technology for a long time like me, you probably know where this is going - unicode.
+            This is a <i>very</i> lazy language. It is just JSFuck but with unicode that's replaced and interpreted.
+            <br><br>
+            <div style="float:left">
+            ZWJ: !<br>
+            ZWNJ: +<br>
+            ZW SPACE: [<br>
+            WORD JOINER: ]<br>
+            ZW NBSP: (<br>
+            MUSIC SYMBOL BEGIN BEAM: )<br></div>
+            <div style="width:100px;height:100px;background-color:#F0DB4E;float:right;"></div>
+            Our logo! ====>
+        </p>
+    </div>
+    <div id="r">
+    <textarea id="text" oninput="s()" style="height:250px"></textarea>
+    <p id="size">Size:</p>
+    <button style="float:left;width:50%" onclick="f(document.getElementById(`text`).value)">Execute!</button> 
+    <button style="float:left;width:50%" onclick="e(document.getElementById(`text`).value)">(dunno if this works) Convert JSFuck to InvisiLang&trade;</button>
+    <br>
+    Load Program:<select>
+        <option>Hello, World!</option>
+    </select>
+    </div>
+    <script>
+        // ZWJ : !
+        // ZWNJ : +
+        // ZWSPACE : [
+        // WORDJOINER : ]
+        // ZWNBSPACE : (
+        // MSBB : )
+        function r(){document.querySelector("#text").value=""; document.querySelector("#size").innerHTML="Done!";}
+        function c(s){return s.includes("[") /* jsfuck needs this so ez check ;)*/}
+        function s(){document.getElementById("size").innerHTML = `Size: ${new TextEncoder().encode(document.getElementById("text").value).length} bytes`}
+        function f(s){if(!c(s))alert("syntax err");eval(s.replace("𝅳","(").replace("\uFEFF",")").replace("\u2060","]").replace("\u200B","[").replace("\u200c","+").replace("\u200D","!"))}
+        function e(s){r();document.querySelector("#text").value=s.replace("(","𝅳").replace(")","\uFEFF").replace("]","\u2060").replace("[","\u200B").replace("+","\u200c").replace("!","\u200D")}
+    </script>
+</body>

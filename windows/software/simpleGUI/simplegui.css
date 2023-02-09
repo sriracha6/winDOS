@@ -1,0 +1,111 @@
+*
+{
+    word-wrap: break-word;
+    max-width:70ch;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+    scroll-snap-type: y mandatory;
+}
+/*.title{  
+    width: 50%;
+    margin: 0 auto;
+}
+.title::before
+{content:"\002E3B";}
+.title::after
+{content:"\002E3B";}
+*/
+a:visited{color:#0000EE;}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]
+{
+    user-select: none;
+    font-family: monospace;
+    cursor: pointer;
+    border: none;
+    background:none;
+    color:#0000EE;
+    text-decoration: underline;
+}
+button::before,
+input[type="button"]::before,
+input[type="reset"]::before,
+input[type="submit"]::before
+{
+    text-decoration: none;
+    display:inline-block;
+    content:"[ ";
+    color:black;
+}
+button::after,
+input[type="button"]::after,
+input[type="reset"]::after,
+input[type="submit"]::after
+{
+    text-decoration: none;
+    display:inline-block;
+    content:" ]";
+    color:black;
+}
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active
+{
+    text-decoration:none;color:red;
+}
+
+.group{
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+
+input
+{
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom:2px dashed black;
+}
+input:focus{
+    /*outline: 1px dashed red;*/
+    outline:none;
+}
+
+ol{
+    list-style-type:none;
+}
+ul{
+    list-style-type:none;
+}
+
+fieldset{border:5px solid black;}
+table {
+    border-collapse: collapse;
+  }
+th,td{
+    border:5px solid black;
+    padding-left:5px;
+    padding-right:5px;
+}
+textarea:focus{outline:none;}
+
+*::-webkit-scrollbar {
+    width: 1em;
+    cursor:pointer;
+}
+ 
+*::-webkit-scrollbar-track {
+    background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><path d='M3 3h1v1H3zM1 2h1v1H1zm2-1h1v1H3zM1 0h1v1H1z'/></svg>") 0 1px;
+    box-shadow: inset 1px 0 black, inset -1px 0 black;
+}
+ 
+*::-webkit-scrollbar-thumb {
+    background: white;
+    box-shadow: inset 0 0 0 1px black;
+    top: var(--p, 0);
+}
